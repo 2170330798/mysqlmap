@@ -25,13 +25,13 @@ void menu()
 
 void test()
 {
-    char host[HOST_MAX_LEN] = "sqli-labs.bachang.org";
+    char host[HOST_MAX_LEN] = "www.baidu.com";
     struct HTTP *http = initHttp();
     char ip[IP_LEN];
     getIpAddress(host, ip);
     struct TCP  *tcp = initTcp(ip,443);
     setAccept((char*)"Accept: text/html\r\n\r\n",http);
-    setRequestWay((char*)"GET /Less-5/?id=1 HTTP/2.0\r\n",http);
+    setRequestWay((char*)"GET /Less-5/?id=1 HTTP/1.1\r\n",http);
     setHost((char*)"Host: sqli-labs.bachang.org\r\n", http);
     for(int i=0;i<REQUEST_BODY_LEN;i++)
         fputs(http->body[i], stdout);
@@ -73,10 +73,8 @@ void start()
 
 int main()
 {
-
-    //char url[200] = "https://sqli-labs.bachang.org/Less-5/?id=";
-    //printf("%s\n",strtok(url+6, "//"));
-    test();
+        test();
+	start();
 	return 0;
 }
 
